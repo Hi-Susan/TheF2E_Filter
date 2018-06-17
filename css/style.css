@@ -8,16 +8,44 @@
   --wt-color: #FFF;
   --bk-color: #000;
 }
+/* Cn */
 @font-face{
 	font-family: custom-sans-serif;
     src: local("微軟正黑體"),local("Heiti TC"),  local("Microsoft JhengHei");
     unicode-range: U+4E00-9FFF;
 }
+/* En:google font */
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900');
 @font-face{
 	font-family: custom-sans-serif;
     src:local('Roboto'), local(Arial), local(Helvetica) ;
     unicode-range: U+00-024F;
+}
+/* google icon */b
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  vertical-align: middle;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
 }
 /* latin */
 @font-face {
@@ -58,6 +86,22 @@ header{
   height: 100%;
   margin: 0 auto;
 }
+select{
+  padding: 0 15px;
+  border: none;
+  width: 100%;
+  line-height: 2;
+  -webkit-appearance:none; /* remove the strong OSX influence from Webkit */
+}
+input[type="text"] {
+  width: 100%; 
+  padding: 0 15px;
+  line-height: 2;
+  border: none;
+  box-sizing: border-box;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing: border-box;
+}
 .logo{
   font-size: 40px;
   font-weight: 400;
@@ -71,6 +115,13 @@ header{
 .tab-search{
   grid-area: search;
 }
+.search-icon{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  padding-bottom: 10px;
+}
 .tab-search input{
   width: 80%;
   position: absolute;
@@ -81,6 +132,7 @@ header{
   border-color: transparent transparent #fff transparent;
   padding-bottom: 7px;
   padding-left: 30px;
+  color: #fff;
 }
 .tab-search input::placeholder{
   color: rgba(255, 255, 255, 0.5);
