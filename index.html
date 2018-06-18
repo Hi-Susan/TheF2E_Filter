@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/Normalize.css">
   <link rel="stylesheet" href="css/style.css">
   <title>TheF2E_Filter_Susan</title>
+  
 </head>
 <body>
   <header>
@@ -92,8 +93,11 @@
           </i>
         </div>
       </div>
+      <div id="test">
+        
+      </div>
       <div class="card">
-        <div class="img-box">
+        <div class="img-box" >
           <img src="http://cloud.culture.tw/h_upload_ccacloud/cms/image/A0/B0/C0/D14/E182/F595/a4d00eaa-07e7-465e-971b-0efdd94269e5.jpg" alt="">
         </div>
         <div class="text-box">
@@ -102,16 +106,50 @@
             『駁二動漫祭』創於2011年，每年11月為南部動漫迷的年度盛會，舊式倉庫不僅是角色扮演愛好者的絕佳拍攝場景，多棟主題之經營方式創造同人販售活動新風貌。每年『駁二當代館』亦搭配『駁二動漫祭』，規劃獨具特色之動漫議題的當代藝術展，探討動漫中的次文化，從新一代動漫創作者的作品觀看社會現象，成為『駁二動漫祭』極具特色的一環。一次次帶狀展覽與活動孕育駁二的動漫能量，逐漸建構出駁二的獨特動漫紋理，因此籌設此常設性之展館—「動漫倉庫」，希望打造動漫族群的專屬基地。
           </div>
           <div class="meta-top">
-            <span class="organizer"></sapn>
-            <span class="cg-tab"></span>
+            <span class="organizer">
+              (中華民國)國立臺灣博物館
+            </span>
+            <span class="cg-tab">
+              售票
+            </span>
           </div>
           <div class="meta-bottom">
-            <span class="region"></span>
-            <span class="date"></span>
+            <span class="region">
+              <i class="material-icons">
+                place
+              </i>國史館臺北館
+            </span>
+            <span class="date">
+              <i class="material-icons">
+                event
+              </i>
+              2018/01/01 - 2018/12/31
+            </span>
           </div>
         </div>
       </div>
     </main>
   </div>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script>
+  (function () {
+      var flickerAPI = "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=6";
+      $.getJSON(flickerAPI, {
+        tags: "mount rainier",
+        tagmode: "any",
+        format: "json"
+      })
+        .done(function (data) {
+          console.log(data);
+          $.each(data.items, function (i, item) {
+            $("<img>").attr("src", item.media.m).appendTo("#images");
+            if (i === 3) {
+              return false;
+            }
+          });
+        });
+    })();
+  </script>
+  <script src="js/index.js"> </script>
 </body>
 </html>
